@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/chat-assistant"
+    },
+    {
+      "path": "./packages/chat-ui"
+    },
+    {
+      "path": "./packages/store"
+    },
+    {
+      "path": "./packages/data-access"
+    },
+    {
+      "path": "./packages/tailwind-preset"
+    },
+    {
+      "path": "./packages/utils"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#__next {
+  height: 100%;
+}
+
+input:-webkit-autofill {
+  background: transparent !important;
+  -webkit-text-fill-color: #fff !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+}
+
+html,
+body,
+:root {
+  @apply bg-black text-white overflow-hidden h-full;
+}
+
+
+
+/* CURSOR 
+body, a, button, [role="button"], input, textarea {
+
+    @media (hover: hover) and (pointer: fine) {
+        cursor: none !important;
+    }
+}
+
+
+.custom-cursor {
+    --cursor-size: 8px;
+    --cursor-color: #00FFC0;
+    --beam-thickness: 0.6px;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    
+ 
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    background-color: var(--cursor-color);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5px var(--cursor-color);
+}
+
+.custom-cursor::before,
+.custom-cursor::after {
+    content: '';
+    position: absolute;
+    background-color: var(--cursor-color);
+    transform: translate(-50%, -50%);
+    opacity: 0.6; 
+}
+
+.custom-cursor::before {
+    width: 200vw;
+    height: var(--beam-thickness);
+    top: 50%;
+    left: 50%;
+}
+
+.custom-cursor::after {
+    width: var(--beam-thickness);
+    height: 200vh;
+    top: 50%;
+    left: 50%;
+}
+
+@media (hover: none) {
+    .custom-cursor {
+        display: none !important;
+    }
+}
+*/

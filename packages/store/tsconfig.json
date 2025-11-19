@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "../utils"
+    },
+    {
+      "path": "../data-access"
+    },
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ]
+}
