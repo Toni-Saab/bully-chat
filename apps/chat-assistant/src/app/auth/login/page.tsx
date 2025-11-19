@@ -8,8 +8,8 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { loginSchema, TLoginSchema } from '../../(lib)/auth/auth.schema';
 import { signIn } from '@event-bot/data-access';
+import { useUserStore } from '@event-bot/store';
 
-// Use dynamic import for the component (client-side rendering only)
 const LoginForm = dynamic(
   () => import('@event-bot/chat-ui').then(mod => mod.LoginForm),
   { ssr: false }
@@ -17,6 +17,7 @@ const LoginForm = dynamic(
 
 function LoginPage() {
   const router = useRouter();
+  const { checkAuth } = useUserStore();
   const [serverError, setServerError] = useState<string | undefined>(undefined);
 
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<TLoginSchema>({
@@ -28,12 +29,12 @@ function LoginPage() {
     setServerError(undefined);
     try {
       await signIn({ email: data.email, password: data.password });
+      await checkAuth();
       router.push('/chat');
     } catch (err) {
       const errorMessage = (err instanceof Error) 
         ? err.message 
         : 'Login failed. Please try again.';
-      
       setServerError(errorMessage);
     }
   };
